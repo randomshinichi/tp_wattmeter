@@ -2,10 +2,10 @@
 
 ![demo](/screenshot.png?raw=true "demo")
 
-Forked from https://bitbucket.org/blackBriar/wattmeter and https://github.com/luispabon/gnome-shell-battery-time-and-percentage
+Forked from https://bitbucket.org/gistart/wattmeter and https://github.com/luispabon/gnome-shell-battery-time-and-percentage
 
-Simple extension to show current power consumption in Gnome battery widget.
+Simple extension to show both Thinkpad Powerbridge batteries and current power consumption in Gnome battery widget.
 
-Differs from original wattmeter -- it reads directly from `/sys/class/power_supply/BAT0/power_now`.
+Reads from `/sys/class/power_supply/BAT0/` and `/sys/class/power_supply/BAT1/`.
 
-Tested with ThinkPad Carbon X1 Gen4
+Tested with ThinkPad T480
