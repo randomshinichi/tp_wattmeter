@@ -91,7 +91,14 @@ var TPIndicator = GObject.registerClass(
             const power = this.last_value.toFixed(1);
             let status = this._getBatteryStatus();
 
-            return _("BAT0: %s%% BAT1: %s%% %s%sW").format(capacities["BAT0"], capacities["BAT1"],status, power);
+            let power_string = _(" %s%sW").format(status, power)
+
+            let capacity_string = _("BAT0: %s%%").format(capacities["BAT0"])
+            if (capacities["BAT1"] != '???') {
+                capacity_string = capacity_string + _(" BAT1: %s%%").format(capacities["BAT1"])
+            }
+
+            return capacity_string + power_string
         }
 
         _sync() {
@@ -104,7 +111,7 @@ var TPIndicator = GObject.registerClass(
             try {
                 return Shell.get_file_contents_utf8_sync(filePath).trim();
             } catch (e) {
-                log(`Cannot read file ${filePath}`, e);
+                // log(`Cannot read file ${filePath}`, e);
             }
             return defaultValue;
         }
