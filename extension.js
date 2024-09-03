@@ -1,10 +1,10 @@
-const BaseIndicator = imports.ui.status.power.Indicator;
-const ExtensionUtils = imports.misc.extensionUtils;
-const Panel = imports.ui.main.panel;
-const Shell = imports.gi.Shell;
-const GObject = imports.gi.GObject;
-const GLib = imports.gi.GLib;
-const Config = imports.misc.config;
+import { Indicator as BaseIndicator } from 'resource:///org/gnome/shell/ui/status/power.js';
+import * as ExtensionUtils from 'resource:///org/gnome/shell/misc/extensionUtils.js';
+import { panel as Panel } from 'resource:///org/gnome/shell/ui/main.js';
+import Shell from 'gi://Shell';
+import GObject from 'gi://GObject';
+import GLib from 'gi://GLib';
+import * as Config from 'resource:///org/gnome/shell/misc/config.js';
 
 
 /** Settings
